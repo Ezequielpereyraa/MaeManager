@@ -1,0 +1,59 @@
+.container {
+  text-align: center;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  @media only screen and (max-width: 52em) {
+    grid-template-columns: 100%;
+  }
+  h1 {
+    margin: 0;
+  }
+  form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    @media only screen and (max-width: 52em) {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  h5 {
+    color: red;
+  }
+  input {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    &::placeholder {
+      text-align: center;
+    }
+  }
+  textarea {
+    margin-bottom: 1rem;
+
+    &::placeholder {
+      text-align: center;
+      line-height: 3;
+    }
+  }
+  .reactCalendar {
+    width: 100%;
+  }
+  .addTask {
+    background-color: black;
+    color: yellow;
+    padding: 0.9rem;
+    margin-top: 1rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .taks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+  }
+}

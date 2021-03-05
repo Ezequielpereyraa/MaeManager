@@ -1,0 +1,26 @@
+.container {
+  height: 3rem;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  & > * {
+    color: yellow;
+  }
+  a {
+    color: yellow;
+    text-decoration: none;
+  }
+  .user {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    b {
+      text-transform: capitalize;
+      font-size: 1.8rem;
+      margin-right: 2rem;
+    }
+  }
+}

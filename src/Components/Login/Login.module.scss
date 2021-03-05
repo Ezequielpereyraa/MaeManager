@@ -1,0 +1,44 @@
+.container {
+  height: 100vh;
+  color: yellow;
+  display: grid;
+  place-content: center;
+  background-color: #000;
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+  }
+  form {
+    padding: 5rem;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 1rem rgba(#fff, 0.25);
+  }
+  input {
+    width: 30rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    &[type="submit"] {
+      transition: 0.5s ease;
+      width: 100%;
+      border: none;
+      background: none;
+      color: antiquewhite;
+      font-size: 1.7rem;
+      cursor: pointer;
+      letter-spacing: 2px;
+      outline: 1px solid rgb(85, 84, 84);
+      &:hover {
+        box-shadow: 0 0 1rem rgba(#fff, 0.25);
+      }
+    }
+  }
+  .error {
+    color: red;
+    text-align: center;
+  }
+}
