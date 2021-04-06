@@ -16,8 +16,9 @@ Este proyecto fue mas que todo tambien para seguir reforzando conocimientos.
 
 # Frontend 
  - React JS
- - CSS
+ - SASS
  - Redux 
+ - Plop - Herramienta para automatizar la creacion de componentes
 # Backend 
  - Node 
  - Express
