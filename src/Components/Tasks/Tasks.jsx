@@ -17,10 +17,9 @@ const Tasks = ({ setUpdate, update }) => {
   const [dataInputTask, setDataInputTask] = useState(initialState);
   const [dateToSend, setDateToSend] = useState();
 
-  const user = useSelector((state) => state.user);
-  const tasks = useSelector((state) => state.tasks);
+  const user = useSelector((state) => state.noteReducer.user);
+  const tasks = useSelector((state) => state.noteReducer.tasks);
   const dispatch = useDispatch();
-
   const { name, description } = dataInputTask;
 
   const handleChange = (e) => {
@@ -80,9 +79,7 @@ const Tasks = ({ setUpdate, update }) => {
         {tasks?.length <= 0 ? (
           <h1>No hay Tareas</h1>
         ) : (
-          tasks?.map((task, index) => (
-            <Task key={index} setUpdate={setUpdate} update={update} {...task} />
-          ))
+          tasks?.map((task, index) => <Task key={index} {...task} />)
         )}
       </section>
     </div>

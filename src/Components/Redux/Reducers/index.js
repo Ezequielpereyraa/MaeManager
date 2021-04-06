@@ -1,4 +1,6 @@
-import { ADD_TASK, CREATE_USER, EDIT_TASK, GET_TASKS, LOADING, REMOVE_TASK } from '../Types';
+import { combineReducers } from 'redux';
+
+import * as types from '../Types';
 
 const initialState = {
   user: null,
@@ -6,36 +8,33 @@ const initialState = {
   isLoding: true,
 };
 
-const rootReducer = (state = initialState, { type, payload }) => {
+const noteReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case CREATE_USER:
+    case types.CREATE_USER:
       return {
         ...state,
         user: payload,
       };
-    case GET_TASKS: {
+    case types.GET_TASKS: {
       return {
         ...state,
         tasks: [...payload],
       };
     }
-    case ADD_TASK:
+    case types.ADD_TASK:
       return {
         ...state,
         tasks: [...state.tasks, payload],
         isLoding: !state.isLoding,
       };
-    case REMOVE_TASK:
+    case types.REMOVE_TASK:
       return {
         ...state,
         tasks: state.tasks.filter((task) => task._id !== payload),
         isLoding: !state.isLoding,
       };
-    case LOADING:
-      return {
-        isLoding: !state.isLoding,
-      };
-    case EDIT_TASK:
+
+    case types.EDIT_TASK:
       return {
         isLoding: !state.isLoding,
       };
@@ -43,5 +42,35 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
+
+const fondosState = {
+  fondos: [],
+};
+
+const fondosReducer = (state = fondosState, { type, payload }) => {
+  switch (type) {
+    case types.ADD_FONDOS:
+      return {
+        ...state,
+        fondos: [...state.fondos, payload],
+      };
+    case types.GET_FONDOS:
+      return {
+        fondos: [...payload],
+      };
+    case types.CLEAN_MONEY: {
+      return {
+        fondos: [],
+      };
+    }
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({
+  noteReducer,
+  fondosReducer,
+});
 
 export default rootReducer;

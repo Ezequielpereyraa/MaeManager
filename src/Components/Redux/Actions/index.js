@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ADD_TASK, CREATE_USER, EDIT_TASK, GET_TASKS, REMOVE_TASK } from '../Types';
+import { ADD_FONDOS, ADD_TASK, CLEAN_MONEY, CREATE_USER, EDIT_TASK, GET_FONDOS, GET_TASKS, REMOVE_TASK } from '../Types';
 
 const fecha = new Date();
 
@@ -45,7 +45,31 @@ export const removeTask = (id) => {
 
 export const editTask = (id, status) => {
   return async (dispatch) => {
-    const response = await axios.put(`/task/${id}`, { status });
-    dispatch({ type: EDIT_TASK, payload: response.data });
+    const { data } = await axios.put(`/task/${id}`, { status });
+    dispatch({ type: EDIT_TASK, payload: data });
+  };
+};
+
+export const addFondos = ({ nombre, monto, medioDePago }) => {
+  return async (dispatch) => {
+    const { data } = await axios.post(`/fondos`, {
+      nombre,
+      medioDePago,
+      monto: parseInt(monto),
+    });
+    dispatch({ type: ADD_FONDOS, payload: data });
+  };
+};
+
+export const getFondos = () => {
+  return async (dispatch) => {
+    const { data } = await axios.get(`/fondos`);
+    dispatch({ type: GET_FONDOS, payload: data });
+  };
+};
+
+export const cleanMoney = () => {
+  return (dispatch) => {
+    dispatch({ type: CLEAN_MONEY });
   };
 };

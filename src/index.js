@@ -9,6 +9,7 @@ import App from './App';
 import store from './Components/Redux/Store';
 
 axios.defaults.baseURL = "https://maemanager.herokuapp.com/api/";
+//axios.defaults.baseURL = "http://localhost:3001/api";
 
 ReactDOM.render(
   <React.StrictMode>

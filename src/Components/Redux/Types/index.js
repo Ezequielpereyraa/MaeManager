@@ -4,3 +4,6 @@ export const GET_TASKS = "GET_TASKS";
 export const REMOVE_TASK = "REMOVE_TASK";
 export const LOADING = "LOADING";
 export const EDIT_TASK = "EDIT_TASK";
+export const ADD_FONDOS = "ADD_FONDOS";
+export const GET_FONDOS = "GET_FONDOS";
+export const CLEAN_MONEY = "CLEAN_MONEY";

@@ -16,7 +16,7 @@ const Login = () => {
     const pass = ["nena2019", "ezequiel24", "eferitox"];
     if (users.includes(data.name) && pass.includes(data.password)) {
       dispatch(addUser(data));
-      history.push("/home");
+      history.push("/tasks");
     } else {
       alert("No eres Usuario");
     }

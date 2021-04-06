@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Dashboard from '../Dashboard/Dashboard';
-import Nav from '../Nav/Nav';
 import { getTasks } from '../Redux/Actions';
 import styles from './Home.module.scss';
 
@@ -18,7 +17,6 @@ const Home = () => {
 
   return (
     <>
-      <Nav />
       <div className={styles.container}>
         <main>
           <Dashboard setUpdate={setUpdate} update={update} />
